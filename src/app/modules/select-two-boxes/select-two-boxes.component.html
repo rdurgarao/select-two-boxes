@@ -1,0 +1,23 @@
+<!--<ng-content></ng-content>-->
+<div id="select-2-box">
+  <ul>
+    <li *ngFor="let box1Item of box1"
+        [ngClass]="{'select-item': box1Item['selected']}" (click)="toggleItem(box1Item)">
+      {{box1Item['name']}}
+    </li>
+  </ul>
+  <ul class="actions">
+    <li class="select-value" (click)="moveToSelected()">
+      >>
+    </li>
+    <li class="unselect-value" (click)="moveToAvailable()">
+      <<
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let box2Item of box2" [ngClass]="{'select-item': box2Item['selected']}"
+        (click)="toggleItem(box2Item)">
+      {{box2Item['name']}}
+    </li>
+  </ul>
+</div>
